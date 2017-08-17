@@ -26,7 +26,7 @@ def harrison_ford
   Movie
     .select(:id, :title)
     .distinct
-    .joins(:actors, :castings)
+    .joins(:actors)
     .where(actors: { name: 'Harrison Ford' } )
     .where.not(castings: { ord: 1 })
     # .where('name = \'Harrison Ford\' AND castings.ord != 1')
